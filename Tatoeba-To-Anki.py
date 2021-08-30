@@ -167,7 +167,7 @@ def addSentence(numstr):
     (sentence, translation) = select_translation(jsonSentence)
 
     if translation == '':
-        print(numstr + ": No known-language translations found! Skipping...")
+        print("  " + numstr + ": No known-language translations found! Skipping...")
         return
     
     # Successfully found translation
@@ -188,6 +188,7 @@ def addSentence(numstr):
 # Prioritizes the translation we use.
 def select_translation(jsonSentence):
     i = 0
+    sentence = ''
     for (known, direct) in translation_priority:
         print(known[0], end='')
         i+=1
